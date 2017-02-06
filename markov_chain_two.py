@@ -10,7 +10,7 @@ def generate_markov_chain(text):
 	that pair as the value.
 	"""
 	text_copy = text[:]
-	word_array = text_copy.split(" ")
+	word_array = text_copy.split()
 
 	markov_chain = {}
 

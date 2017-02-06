@@ -1,17 +1,17 @@
 """
 This file will import the two existing Markov chains and generate a text based off
-of them.  The first is a Markov chain of length 2, and the second is a Markov chain
-of length 1.
+of them.  The first is a Markov chain order 2, and the second is a Markov chain
+order 1.
 """
 
 import json
 import generate_text
 
-with open('chain_two.json', 'r') as fp:
+with open('markov_chains/chain_two.json', 'r') as fp:
     TWO_WORD_CHAIN = json.load(fp)
 fp.close()
 
-with open('chain.json', 'r') as fp:
+with open('markov_chains/chain_one.json', 'r') as fp:
     ONE_WORD_CHAIN = json.load(fp)
 fp.close()
 

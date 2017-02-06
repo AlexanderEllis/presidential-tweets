@@ -9,10 +9,10 @@ def generate_markov_chain(text):
 	with each word as a key and a list of words that follow that word as the value. For a
 	basic model, I won't calculate percentages for each word, but will instead rely on
 	accessing a random index when I use the chain later. For a basic version, I'm creating
-	a Markov chain of length 1 for now
+	a Markov chain of order 1 for now
 	"""
 	text_copy = text[:]
-	word_array = text_copy.split(" ")
+	word_array = text_copy.split()
 
 	markov_chain = {}
 
