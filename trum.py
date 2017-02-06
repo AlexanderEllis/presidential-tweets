@@ -5,7 +5,7 @@ order 1.
 """
 
 import json
-import generate_text
+from generating_markov_chains import generate_text
 
 with open('markov_chains/chain_two.json', 'r') as fp:
     TWO_WORD_CHAIN = json.load(fp)
@@ -14,7 +14,6 @@ fp.close()
 with open('markov_chains/chain_one.json', 'r') as fp:
     ONE_WORD_CHAIN = json.load(fp)
 fp.close()
-
 
 RESULT = generate_text.generate_text(TWO_WORD_CHAIN, ONE_WORD_CHAIN)
 
