@@ -16,7 +16,7 @@ def create_tweet_string():
 
 	json_files = os.listdir("data")
 
-	resulting_string = ''
+	all_tweets = []
 
 	for json_file in json_files:
 		path = 'data/' + json_file
@@ -24,7 +24,7 @@ def create_tweet_string():
 			tweets = json.loads(fp.read())
 			for i in range(len(tweets)):
 				if '"' not in tweets[i]["text"][0]: # No retweets allowed
-					resulting_string += tweets[i]["text"].replace('\n', ' ').replace('&amp;', '&') + ' '
+					all_tweets.append(tweets[i]["text"].replace('\n', ' ').replace('&amp;', '&'))
 		fp.close()
 
-	return resulting_string
+	return all_tweets

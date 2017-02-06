@@ -45,13 +45,17 @@ def find_next_word(input_word, word_before, two_word_chain, one_word_chain):
 	Given an existing word, this function accesses the Markov chain values
 	for that word and selects a random word from that list.  The probability
 	distribution mimics storing a probability for each word.
+	Given that Trump often ends his tweets with links, I also included a random word
+	if the input word isn't in either of our chains.
 	"""
 	pair = input_word + ' ' + word_before
 	
 	if pair in two_word_chain:
 		array_of_words = two_word_chain[pair]
-	else:
+	elif input_word in one_word_chain:
 		array_of_words = one_word_chain[input_word]
+	else:
+		array_of_words = [random.choice(list(one_word_chain.keys()))]
 	random_index = random.randint(0, len(array_of_words) - 1)
 	selected_word = array_of_words[random_index]
 	return selected_word
